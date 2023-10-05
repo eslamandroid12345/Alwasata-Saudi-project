@@ -1,0 +1,20 @@
+* 3 Senior PHP developers (if you are a mid-leve/junior and familiar with most of these requirements, you're welcome to apply) 
+- experience with laravel
+- he/she knows how to apply SOLID and Design patterns.
+- familiar with mysql db
+- can write unit/integration tests.
+- has experience dealing with scalability challenges
+- experience in mongodb is a big plus.
+- basic knowledge with devops is a plus. 
+- part of your responsibilities is mentoring other developers. 
+-----------------------------
+* 3 Senior front-end developers:
+(if you are a mid-leve/junior and familiar with most of these requirements, you're welcome to apply)  
+- experience with vanilla js
+- experience with vuejs
+- experience with writing tests
+- experience with SOLID and design patterns.
+- experience with Nuxtjs is a plus.
+- part of your responsibilities is mentoring other developers.
+In case you're interested, please send your cv to: syam@munjz.com
+(please add your name, the position/level in the title of the email)

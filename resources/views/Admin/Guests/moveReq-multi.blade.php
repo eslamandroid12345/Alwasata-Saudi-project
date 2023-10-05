@@ -1,0 +1,61 @@
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" aria-hidden="true"
+     id="mi-modal9">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"
+                    id="mediumModalLabel">{{ MyHelpers::admin_trans(auth()->user()->id,'Move Req') }} </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <form action="" method="get" id="frm-update3">
+                <div class="modal-body">
+                    @csrf
+                    <input name="_token" value="{{ csrf_token() }}" type="hidden">
+                    <div class="form-check">
+                        <input type="checkbox" id="not_complete" class="form-check-input" name="not_complete"
+                               style="padding-left:5%;"/>
+                        <label class="form-check-label" for="not_complete" style="padding-right:2%;">غير مكتمل </label>
+                    </div>
+
+                    <br>
+
+                    <div id="salesagentDiv" class="form-group">
+                        <label for="salesagent"
+                               class="control-label mb-1">{{ MyHelpers::admin_trans(auth()->user()->id,'Sales Agent') }}</label>
+
+                        <select id="salesagent3" class="tokenizeable form-control" name="salesagents" multiple>
+
+                            @foreach ($salesAgents as $salesAgent)
+
+                                <option value="{{$salesAgent->id}}">{{$salesAgent->name}}</option>
+
+                            @endforeach
+
+                        </select>
+
+                        <div class="text-danger" id="salesagentsError3" role="alert"></div>
+
+                        @if ($errors->has('salesagents'))
+                            <span class="help-block col-md-12">
+                            <strong style="color:red ;font-size:10pt">{{ $errors->first('salesagents') }}</strong>
+                        </span>
+                        @endif
+                    </div>
+
+                    <br>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" id="modal-btn-no9" class="btn btn-secondary"
+                            data-dismiss="modal">{{ MyHelpers::admin_trans(auth()->user()->id,'Cancel') }}</button>
+                    <button type="button" id="submitMove3"
+                            class="btn btn-primary">{{ MyHelpers::admin_trans(auth()->user()->id,'Move') }}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

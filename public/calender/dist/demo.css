@@ -1,0 +1,10 @@
+
+.title{
+    text-align: center;
+}
+
+.calendar-container{
+    position: relative;
+    margin: 50px auto;
+    max-width: 500px;
+}

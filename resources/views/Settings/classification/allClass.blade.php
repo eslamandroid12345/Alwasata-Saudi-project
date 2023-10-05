@@ -1,0 +1,477 @@
+@extends('layouts.content')
+
+@section('title')
+{{ MyHelpers::admin_trans(auth()->user()->id,'all_loan_application_status') }}
+@endsection
+
+
+@section('css_style')
+
+<style>
+    .middle-screen {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .commentStyle {
+        max-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+
+    td {
+        text-align: center;
+    }
+
+    .reqNum {
+        width: 1%;
+    }
+
+    .reqType {
+        width: 2%;
+    }
+</style>
+{{-- NEW STYLE   --}}
+<link rel="stylesheet" href="{{ asset('assest/datatable/style.css') }}">
+@endsection
+
+@section('customer')
+
+
+
+@if(session()->has('message'))
+<div class="alert alert-success">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    {{ session()->get('message') }}
+</div>
+@endif
+
+@if(session()->has('message2'))
+<div class="alert alert-danger">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    {{ session()->get('message2') }}
+</div>
+@endif
+
+
+
+
+<div id="msg2" class="alert alert-dismissible" style="display:none;">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+
+</div>
+
+<div class="addUser my-4">
+    <div class="userBlock d-flex align-items-center justify-content-between flex-wrap">
+        <h3> {{ MyHelpers::admin_trans(auth()->user()->id,'all_loan_application_status') }}:</h3>
+
+    </div>
+</div>
+<br>
+
+
+@if ($classes > 0)
+
+<div class="addUser my-4">
+            <div class="userBlock d-flex align-items-center justify-content-between flex-wrap">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="class_user" id="inlineRadio1" value="">
+                    <label class="form-check-label" for="inlineRadio1">الكل</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" checked type="radio" name="class_user" id="inlineRadio2" value="0">
+                    <label class="form-check-label" for="inlineRadio2">الاستشاري</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="class_user" id="inlineRadio2" value="1">
+                    <label class="form-check-label" for="inlineRadio2">مدير المبيعات</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="class_user" id="inlineRadio3" value="2">
+                    <label class="form-check-label" for="inlineRadio3">مشرف التمويل</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="class_user" id="inlineRadio3" value="3">
+                  <label class="form-check-label" for="inlineRadio3">مدير الرهن</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="class_user" id="inlineRadio3" value="5">
+                    <label class="form-check-label" for="inlineRadio3">الجودة</label>
+                </div>
+
+                
+                <select id='class_type' class="form-control" style="width: 200px">
+                         <option value=""> نوع التصنيف</option>
+                        <option value="0">سلبي</option>
+                        <option value="1">إيجابي</option>
+                </select>
+
+            </div>
+        </div>
+<div class="tableBar">
+    <div class="topRow">
+        <div class="row align-items-center text-center text-md-left">
+            <div class="col-lg-9">
+                <div class="tableUserOption  flex-wrap ">
+                    <div class="input-group col-md-7 mt-lg-0 mt-3">
+                        <input class="form-control py-2" type="search" placeholder="ابحث هنا" id="example-search-input">
+                        <span class="input-group-append">
+                            <button class="btn btn-outline-info" type="button">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                    <div class="addBtn col-md-5 mt-lg-0 mt-3">
+                        <a href="{{route('admin.addclassificationPage')}}">
+                            <button class="mr-2 Cloud">
+                                <i class="fas fa-plus"></i>
+                                {{ MyHelpers::admin_trans(auth()->user()->id,'Add') }} {{ MyHelpers::admin_trans(auth()->user()->id,'Classification') }}
+                            </button>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-3 mt-lg-0 mt-3">
+                <div id="dt-btns" class="tableAdminOption">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dashTable">
+        <table id="pendingReqs-table" class="table table-bordred table-striped data-table">
+            <thead>
+                <tr>
+
+                    <th style="text-align:center">{{ MyHelpers::admin_trans(auth()->user()->id,'user') }}</th>
+                    <th style="text-align:center">{{ MyHelpers::admin_trans(auth()->user()->id,'Classification') }}</th>
+                    <th style="text-align:center">نوعه</th>
+                    <th style="text-align:center">متطلب للحسبة؟</th>
+                    <th style="text-align:center">{{ MyHelpers::admin_trans(auth()->user()->id,'actions') }}</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+
+        </table>
+    </div>
+</div>
+@else
+<div class="middle-screen">
+    <h2 style=" text-align: center;font-size: 20pt;">{{ MyHelpers::admin_trans(auth()->user()->id,'No Classification') }}</h2>
+</div>
+
+@endif
+
+
+
+@endsection
+
+@section('updateModel')
+@include('Settings.classification.updateClass')
+@include('Settings.classification.confirmDeleteMsg')
+@endsection
+
+
+@section('scripts')
+
+
+<script>
+    $(document).ready(function() {
+        var dt = $('.data-table').DataTable({
+            "language": {
+                "url": "{{route('datatableLanguage')}}",
+                buttons: {
+                    excelHtml5: "اكسل",
+                    print: "طباعة",
+                    pageLength: "عرض",
+
+                }
+            },
+            "lengthMenu": [
+                [10, 25, 50, -1],
+                [10, 25, 50, "الكل"]
+            ],
+            dom: 'Bfrtip',
+            buttons: [
+                // 'copyHtml5',
+                'excelHtml5',
+                // 'csvHtml5',
+                // 'pdfHtml5' ,
+                'print',
+                'pageLength'
+            ],
+
+            processing: true,
+            serverSide: true,
+            ajax: {
+                    url:"{{ url('admin/settingClass-datatable') }}",
+                    data:function(d){
+                        d.class_user=$('input[name="class_user"]:checked').val()
+                        d.class_type=$('#class_type').val()
+                        d.class_name=$('#example-search-input').val()
+                    }
+                },
+            columns: [
+
+                {
+                    data: 'user_role',
+                    name: 'user_role'
+                },
+                {
+                    data: 'value',
+                    name: 'value'
+                },
+                {
+                    data: 'type',
+                    name: 'type'
+                },
+                {
+                    data: 'is_required_in_calculater',
+                    name: 'is_required_in_calculater'
+                },
+                {
+                    data: 'action',
+                    name: 'action'
+                }
+            ],
+            initComplete: function() {
+
+
+                    $('#example-search-input').keyup(function () {
+                        dt.search($(this).val()).draw();
+                    })
+
+                    $('#class_type').change(function(){
+                        dt.draw();
+                    });
+
+                    $('input:radio').on('click', function(e) {
+                        dt.draw();
+                    });
+
+
+                dt.buttons().container()
+                    .appendTo('#dt-btns');
+
+                $(".dt-button").last().html('<i class="fas fa-search"></i>').attr('title', 'بحث');
+                $('.buttons-excel').html('<i class="fas fa-file-import"></i>').attr('title', 'تصدير');
+                $('.buttons-print').html('<i class="fas fa-print"></i>').attr('title', 'طباعة');
+                $('.buttons-collection').html('<i class="fas fa-eye"></i>').attr('title', 'عرض');
+
+                $('.buttons-excel').addClass('no-transition custom-btn');
+                $('.buttons-print').addClass('no-transition custom-btn');
+                $('.buttons-collection').addClass('no-transition custom-btn');
+
+                $('.tableAdminOption span').tooltip(top)
+                $('button.dt-button').tooltip(top)
+
+                /* To Adaptive with New Design */
+
+            },
+            createdRow: function(row, data, index) {
+
+
+                $('td', row).eq(0).addClass('commentStyle');
+                $('td', row).eq(0).attr('title', data.value);
+
+
+            },
+        });
+    });
+
+
+    //////////////////////////////////////////////////////#
+
+    $(document).on('click', '#edit', function(e) {
+
+
+        $('#classError').addClass("d-none");
+        $('#roleError').addClass("d-none");
+
+
+        var id = $(this).attr('data-id');
+
+        $.get("{{route('admin.getclass')}}", {
+            id: id
+        }, function(data) {
+
+            // console.log(data);
+
+            if (data.status != 0) {
+
+                $('#frm-update').find('#id').val(data.class.id);
+                $('#frm-update').find('#class').val(data.class.value);
+                $('#frm-update').find('#role').val(data.class.user_role);
+                $('#frm-update').find('#type').val(data.class.type);
+                $('#frm-update').find('#is_required_in_calculater').val(data.class.is_required_in_calculater);
+
+                $('#myModal').modal('show');
+
+
+            } else
+                $('#msg2').addClass("alert-danger").removeAttr("style").html("<button type='button' class='close' data-dismiss='alert'>&times;</button>" + data.message);
+
+
+        });
+
+
+
+    });
+    ///////////////////////////////////////////
+
+    $('#frm-update').on('submit', function(e) {
+
+
+        $('#classError').addClass("d-none");
+        $('#roleError').addClass("d-none");
+
+
+        e.preventDefault();
+        var data = $(this).serialize();
+        var url = $(this).attr('action');
+
+
+
+        $.post(url, data, function(data) { //data is array with two veribles (request[], ss)
+
+            // console.log(data);
+
+            if (data.status == 1) {
+
+                $('.data-table').DataTable().ajax.reload();
+
+                $('#msg2').addClass("alert-success").removeAttr("style").html("<button type='button' class='close' data-dismiss='alert'>&times;</button>" + data.message);
+
+            } else if (data.status == 0) {
+                $('#msg2').addClass("alert-warning").removeAttr("style").html("<button type='button' class='close' data-dismiss='alert'>&times;</button>" + data.message);
+            }
+
+
+            $('#myModal').modal('hide');
+
+
+
+        }).fail(function(data) {
+
+            var errors = data.responseJSON;
+
+            if ($.isEmptyObject(errors) == false) {
+
+                $.each(errors.errors, function(key, value) {
+
+                    var ErrorID = '#' + key + 'Error';
+                    $(ErrorID).removeClass("d-none");
+                    $(ErrorID).text(value);
+
+                })
+
+            }
+        });
+
+    });
+
+    ////////////////////////////////////////////
+
+    $(document).on('click', '#archive', function(e) {
+        var id = $(this).attr('data-id');
+
+        //  console.log(id);
+
+        var modalConfirm = function(callback) {
+
+
+            $("#mi-modal").modal('show');
+
+
+            $("#modal-btn-si").on("click", function() {
+                callback(true);
+                $("#mi-modal").modal('hide');
+            });
+
+            $("#modal-btn-no").on("click", function() {
+                callback(false);
+                $("#mi-modal").modal('hide');
+            });
+        };
+
+        modalConfirm(function(confirm) {
+            if (confirm) {
+
+
+                $.post("{{ route('admin.deleteClass')}}", {
+                    id: id,
+                    _token: "{{csrf_token()}}",
+                }, function(data) { // we pass var id in the request with id as name ; we use $.post : because we pass our data to server and got response
+
+                    //console.log(data);
+
+                    if (data.status == 1) {
+                        $('.data-table').DataTable().ajax.reload();
+                        $('#msg2').addClass("alert-success").removeAttr("style").html("<button type='button' class='close' data-dismiss='alert'>&times;</button>" + data.message);
+
+                    } else {
+
+                        $('#msg2').addClass("alert-danger").removeAttr("style").html("<button type='button' class='close' data-dismiss='alert'>&times;</button>" + data.message);
+
+                    }
+
+
+
+                });
+
+
+
+            } else {
+                //No delete
+            }
+        });
+
+
+    });
+
+
+
+    //////////////////////////////////////////////////////#
+
+    function getRole(r) {
+
+        if (r == 0)
+            role = "{{MyHelpers::admin_trans(auth()->user()->id, 'Sales Agent') }}";
+        else if (r == 1)
+            role = "{{MyHelpers::admin_trans(auth()->user()->id, 'Sales Manager') }}";
+        else if (r == 2)
+            role = "{{MyHelpers::admin_trans(auth()->user()->id, 'Funding Manager') }}";
+        else if (r == 3)
+            role = "{{MyHelpers::admin_trans(auth()->user()->id, 'Mortgage Manager') }}";
+        else if (r == 4)
+            role = "{{MyHelpers::admin_trans(auth()->user()->id, 'General Manager') }}";
+        else if (r == 5)
+            role = "{{MyHelpers::admin_trans(auth()->user()->id, 'Quality Manager') }}";
+        else if (r == 6)
+            role = "{{MyHelpers::admin_trans(auth()->user()->id, 'Collaborator') }}";
+        else if (r == 7)
+            role = "{{MyHelpers::admin_trans(auth()->user()->id, 'Admin') }}";
+        else
+            role = "{{MyHelpers::admin_trans(auth()->user()->id, 'Undefined') }}";
+
+
+        return role;
+    }
+</script>
+@endsection

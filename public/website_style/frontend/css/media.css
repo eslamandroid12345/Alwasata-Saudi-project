@@ -1,0 +1,272 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+
+
+@media(max-width:1600px){
+
+
+
+
+
+}
+
+@media (min-width:1356px) and (max-width:1600px){
+
+
+
+}
+
+@media (min-width:1356px) and (max-width:1400px){
+
+
+
+}
+
+
+
+@media(max-width:1365px){
+
+
+
+}
+
+
+
+@media(max-width:1279px){ 
+
+	
+
+}
+
+body.lang_ar, body { overflow-x: hidden; }	
+
+@media(max-width:1199px){
+
+.container { width: 100%; padding: 0 2%; }
+.contactinfo { padding: 14px; } 
+.logo img { width: 150px; }
+.logo { margin-top: 5px; }
+.language { margin-right: 152px; } 
+.language select { margin-top: 10px; }
+.navigation li a { font-size: 13px; }
+.navigation li {
+    padding: 0 6px;
+}
+.navigation {
+    float: right;
+    padding: 17px 9px 0 0;
+}
+#sliderCaptions .meterSect .float-left h3 { font-size:14px; }
+#sliderCaptions .meterSect .float-left { margin: 0; }
+#sliderCaptions .startPoint strong { font-size: 12px; }
+.meterSect .float-right input { font-size: 12px; }
+#sliderCaptions .financeValue { padding: 15px 0;}
+.loan-ammount-form div { margin: 0; }
+.calculator-form h4 { font-size: 14px; }
+#sliderCaptions .financeValue h5 { font-size: 17px; }
+.counterBlk { margin: -80px 0 50px 2%; width: 96%; padding: 30px 10px;}
+.counterBlk li figure img { width: 50px; }
+.counterBlk li .txt { padding: 2px 0 0 15px; }
+.btmList { padding: 10px; }
+
+.footerTp { padding: 35px 0; }
+.footerTp .col-md-12{ width: 33.3%; }
+
+/*.innerCaption {
+    top: 23%;
+}*/
+.ask-conslutant { padding: 0 5%; }
+.form-container { width: 100%; }
+body.lang_ar .navigation {padding: 18px 0 0 0;}
+body.lang_ar .language {margin-left: 160px;}
+body.lang_ar .contactinfo { padding: 12px;}
+
+body.lang_ar .formRow strong, .form-group strong { display: block; width: 100%;}
+.actchcv p { margin-bottom: 10px; }
+.actchcv {  width: 100%; }
+body.lang_ar .actchcv .browse {
+    border-radius: 0;
+    right: 0;
+}
+header { z-index: 999999999; }
+.sliderSection { position: relative;z-index: 2; }
+.new-headlines { position: relative;z-index: 2;  }
+}
+
+	
+
+@media(max-width:1023px){
+	.slider-caption .col-sm-8, .slider-caption .col-sm-4 { width: 100%; }
+	.slider-caption { position: relative; }
+	#sliderCaptions { top: 0;}
+	.slider-caption .maangecalculator { margin-top: -80px; padding-bottom: 25px;}
+	.serviceSect { padding: 118px 0 40px 0; }
+	.counterBlk li { text-align: center;}
+	.counterBlk li .txt { padding: 8px 0 0 0; width: 100%;}
+	.counterBlk li figure {width: 100%;}
+	.counterBlk { padding: 20px 10px; }
+	.registerForm { width: 90%; }
+	.serviceList .slick-next, .serviceList .slick-prev { display: none !important; }
+	.slick-dots { text-align: center; padding: 15px 0 0 0; float: left; width: 100%; }
+	.slick-dots li { display: inline-block; padding: 0 4px; }
+	.slick-dots li button { border-radius: 50%; background: #cc9933; color: #fff; border: none; width: 20px; height: 20px; font-size:10px;}
+	.serviceWht .col-sm-4 { width: 50%; }
+	.serviceWht { padding: 0 1%; }
+	.serviceWht .serviceBx { padding: 0 0 30px 0; }
+	.registerSection h3 { padding-bottom: 25px; }
+	.serviceWht { padding: 40px 0 10px 0; }
+	.footerTp .col-md-12 {width: 100%;}
+	.addressDtl .adrsInfo, .emailinfo, .phoneinfo{ padding-bottom: 10px; }
+	.footerTp h5 { font-size: 20px; padding-bottom: 15px; }
+	.footerLinks { padding-bottom: 25px; }
+	.footerLinks li {  padding-bottom: 15px; }
+	.socialLinks { padding-bottom: 25px; }
+
+	.navigation { display: none; }
+	.contactinfo { padding: 12px;}
+	.language select { margin: 0; }
+	.contactinfo { display: none; }
+	.mobileMenu { float: right; position: absolute;right: 10px;  }
+	.mobileMenu a { display: block; background: #cc9933; padding: 10px 5px; width: 40px;}
+	.mobileMenu a span { display: block; height: 2px; background: #fff; width: 100%; margin-bottom: 5px;}
+	.mobileMenu a span:last-child { margin-bottom: 0; }
+	.language { margin-right: 30px;}
+	/*.innerCaption {top: 18%;}*/
+	.funding h3 { padding-bottom: 20px; }
+	.whiteBx { padding: 40px 30px; }
+	.topcontent { padding-bottom: 25px; }
+	.whiteBx { box-shadow: 0 0 26px 0 rgba(0, 0, 0, 0.2); }
+	.imagesect { padding: 10px; }
+	.txtSection { padding: 20px 0 10px 0; }
+	.txtSection h3 { font-size: 22px; padding: 0px 0 12px 0; }
+	.txtSection p { font-size: 15px; line-height: 24px; }
+
+	body.lang_ar .mobileMenu { right: auto; left:10px; }
+	body.lang_ar .language {margin-left: 35px;}
+	body.lang_ar #sliderCaptions .meterSect .float-left h3 { text-align: right; }
+	body.lang_ar .footerLinks, body.lang_ar .adressBlk { padding: 0 15px 30px 15px; }
+	body.lang_ar .formRow .col-md-12 { width: 100%; }
+
+	.navigation{background: #cc9933;position: absolute;width: 260px;padding: 15px;margin: 0;display: none;
+right: 10px;top: 46px;z-index: 99999999; }
+	.navigation li { width: 100%; padding: 0 0 10px 0; }
+	.navigation li a { color: #fff; }
+	.navigation li a:hover { color: #333; }
+	body.lang_ar .navigation { right: auto; left:10px; z-index: 99999999; position: absolute; }
+	body.lang_ar .navigation li { text-align: right; }
+	body.lang_ar .navigation { padding: 20px; }
+	.detail figure img { width: 100%; }
+}
+
+
+
+@media (max-width:767px) {
+
+#sliderCaptions .meterSect .loan-ammount-form { width: 100%; }
+.btmList li span { font-size: 13px; }
+.serviceWht .serviceBx { text-align: center; }
+.serviceWht .serviceBx figure { width: 360px; height:240px; overflow: hidden; }
+.serviceWht .serviceBx figure img { width: 100%; }
+.serviceBx .txt h5 { font-size: 18px; }
+.serviceWht .col-sm-4 { width: 100%; }
+
+.contactinfo figure { display: none; }
+header { padding: 10px; }
+.registerSection { padding: 40px 0; }
+.container { padding: 0 4%; }
+.clientsection { padding: 30px 0; }
+.whiteBx { padding: 40px 20px;}
+.formRow label { font-size: 14px; }
+.formRow .form-control { margin-bottom: 15px; font-size: 13px; height: 40px; }
+.formRow { padding-bottom: 0; }
+.formRow .form-group select.form-control { margin-bottom: 15px; font-size: 13px; height: 40px; }
+.innerCaption h3 { font-size: 22px; }
+/*.innerCaption { top: 34%;}*/
+.language { margin-right: 50px;}
+
+.finanaceRow { padding-bottom: 0; }
+.txtSection{ padding: 0 0 35px 0; }
+.imagesect { margin-bottom: 35px; }
+
+body.lang_ar .language {  margin-left: 46px;}
+body.lang_ar .socialLinks li { margin-left: 10px; }
+.newsList { padding: 30px 0; }
+.actchcv .browse { height: 40px; line-height: 40px; }
+
+.detail figure img { width: 100%; }
+.form-group strong {font-weight: 500;font-size: 14px;}
+
+}
+
+
+
+
+
+@media(max-width:580px){
+
+.registerSection h3 {
+    padding: 0 5% 15px 5%;
+    font-size: 18px;
+}
+.registerSection .col-xs-12 { padding: 0; }
+.alert { padding: 5px; font-size: 12px; margin-bottom: 10px; }
+footer .container { padding: 0 7%; }
+.adressBlk { padding-bottom: 15px; }
+.footerTp h5, .footerfrom h6 {
+    font-size: 18px;
+    padding-bottom: 18px;
+}
+.footerLinks li {
+    padding-bottom: 10px;
+}
+
+.counterBlk li .txt strong { font-size: 19px; }
+.counterBlk li .txt p { font-size: 12px; }
+.counterBlk li figure img { width: 34px;}
+.service-heading h3 { font-size: 24px; }
+.innerSlider img { height: 130px; }
+/*.innerCaption {  top: 48%;}*/
+.content { padding: 30px 0; }
+.funding h3 { font-size: 18px; line-height: 24px; }
+.formRow .col-xs-12 { padding: 0; }
+.requstform-inner { padding: 0 5%; }
+.detail figure img { height: auto; }
+.newsBlk figure a img {height: auto;}
+.ftLinks { padding: 0; }
+
+.detail figure img { width: 100%; }
+.ftLinks { padding: 0 15px; }
+.form-group strong {font-weight: 500;font-size: 14px;}
+}
+
+@media(max-width:479px){
+.contactinfo { display: none; }
+.language select { margin: 0; } 
+.slider-caption .col-sm-8, .slider-caption .col-sm-4 { padding: 0; }
+#sliderCaptions .meterSect { padding: 10px 5px; }
+.endPoint { width: 30% !important; }
+.loan-ammount-form div.float-right { width: 100%; } 
+.loan-ammount-form div.float-left { width: 100%; }
+.sumitbtn .srchbtn { font-size: 12px; }
+.counterBlk { width: 92%; margin: -80px 0 50px 4%; }
+.counterBlk li { width: 50%; min-height: 100px; }
+.service-heading h3 {-size: 19px;}
+.socialLinks li { margin-right: 10px; }
+.topcontent p { font-size: 16px; line-height: 22px; padding-bottom: 20px; }
+.txtSection h3 { font-size: 19px; }
+.txtSection p { font-size: 14px; line-height: 24px;}
+.txtSection a { font-size: 13px; line-height: 42px; }
+.formRow .col-xs-12 { padding: 0; }
+body.lang_ar .footerLinks { padding-left: 0; padding-right: 0; }
+.topcontent p { padding-bottom: 0; }
+body.lang_ar .col-md-12 { width: 100%; }
+body.lang_ar .formRow .form-group select.form-control { width: 100%; }
+.actchcv .browse { margin-left: -40px !important; }
+body.lang_ar .actchcv .browse {right: -40px; }
+
+.ftLinks { padding: 0 15px; }
+.detail figure img { width: 100%; }
+.form-group strong {font-weight: 500;font-size: 14px;}
+}

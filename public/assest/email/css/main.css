@@ -1,0 +1,258 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none; }
+ 
+ @font-face {
+   font-family: "Bold";
+   src: url(../fonts/Bahij_TheSansArabic-Bold.ttf);
+ }
+ 
+ @font-face {
+   font-family: "s-bold";
+   src: url(../fonts/Bahij_TheSansArabic-SemiBold.ttf);
+ }
+ 
+ @font-face {
+   font-family: "Plain";
+   src: url(../fonts/Bahij_TheSansArabic-Plain.ttf);
+ }
+ @font-face {
+   font-family: "light";
+   src: url(../fonts/Bahij_TheSansArabic-Light.ttf);
+ }
+ .bold{
+  font-family: "Bold";
+ }
+ body{
+  font-family: "Plain";
+ }
+p{
+  margin-bottom: 0;
+}
+h5{
+  margin-bottom: 0;
+}
+.side_right{
+  width:400px;
+ 
+  min-height: 850px;
+  background-image: url(../images/bg2.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 20px;
+
+}
+.side_content{
+  flex: 1;
+  flex-direction: column;
+}
+.step{
+  align-items: center;
+}
+.step span{
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  color: #2C2C2C;
+  background-color: #EEEEEE;
+
+}
+.step p{
+  font-family: "Bold";
+  color: #858585;
+}
+.step.active span{
+background-color: #1A7BB2;
+color: #fff;
+margin: auto;
+margin-bottom: 18px;
+}
+.step.active p{
+  color: #222;
+}
+.single_form label{
+  display: block;
+}
+
+
+.bootstrap-select .dropdown-toggle .filter-option {
+  text-align: right !important;
+}
+.bootstrap-select > .dropdown-toggle:after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f107";
+  display: inline-block;
+  padding-right: 3px;
+  vertical-align: middle;
+  font-weight: 900;
+  border: 0 !important;
+  color: #000;
+  left: 20px;
+  position: absolute;
+}
+.btn{
+ 
+  line-height: 2;
+  height: 50px !important;
+}
+.form-control{
+  height: 50px;
+  outline: 0 !important;
+  box-shadow: none !important;
+  background-color: #f3f3f3;
+  border: none;
+}
+.form-control:focus{
+  border: 1px solid #9999;
+}
+.btn-light{
+  background-color: #f3f3f3 !important;
+  border :none !important;
+}
+
+.invoice{
+  border-radius: 5px;
+  background-color: #f3f3f3 ;
+
+}
+.main-color{
+  color: #1F9B56;
+}
+.title_sub{
+  background-color: #1F9B56;
+  color: #fff;
+  border-radius: 5px;
+}
+.single-pay{
+  border-radius: 5px;
+  background-color: #f3f3f3 ;
+  transition: ease-in-out 0.3s;
+  border: 1px solid #f3f3f3;
+}
+.single-pay:hover{
+  border: 1px solid #1F9B56;
+}
+.pay-form .form-control{
+  background-color: #F0F7F3;
+  height: 60px;
+}
+.user-icon{
+  width: 45px;
+  height: 45px;
+  border-radius: 50px;
+  color:#ffff;
+}
+.bg-1{
+  background-color: #1F9B56;
+}
+.bg-2{
+  background-color: #CFCD2E;
+}
+.bg-3{
+  background-color: #2E89CF;
+}
+.bg-4{
+  background-color: #BC6CB2;
+}
+.single-user{
+  border: 1px solid #D4D4D4;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+
+
+.import{
+  
+  background-color: #3BC182; /* Green */
+  border: none;
+  color: #fff;
+  padding: 8px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: .9rem;
+  transition: ease-in-out .3s;
+
+}
+
+.import:hover{
+  background-color: #26a56a;
+}
+
+.table-cont{
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #e9ecef;
+
+}
+.table td, .table th{
+  border-top: 0;
+}
+.table thead th{
+  color: #1F9B56;
+  white-space: nowrap;
+}
+.table td, .table th{
+  white-space: nowrap;
+
+}
+.header{
+  background-color: #1A7BB2;
+  width: 100%;
+  
+}
+.header img{
+  max-width: 200px;
+}
+@media(max-width:767px){
+  .table-cont{
+    overflow: scroll;
+  }
+}
+ 
+@media(max-width:450px){
+  .nav-top{
+    flex-wrap: wrap;
+  }
+  .step {
+    margin: 0px 10px 10px 0px !important;
+    margin-bottom: 20px;
+  }
+}
+button.bg-main{
+  background-color: #1A7BB2 !important;
+}
+.logo-top{
+  background-color: #1A7BB2;
+  padding: 60px 0;
+ 
+border-radius: 6px 6px 0px 0px;
+background: linear-gradient(#116a9d 0%, #2793d1 100%);
+
+}
+.app-downloads img{
+  width: 150px ;
+  height: auto;
+}
+.btns{
+  width: fit-content;
+  margin: auto;
+}
+ 
+
+
+ .shadow-add{
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.04);
+ 
+  border-radius: 0px 0px 6px 6px;
+ 
+  
+ }

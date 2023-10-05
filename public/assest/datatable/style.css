@@ -1,0 +1,23 @@
+.tFex{
+    position: relative !important;
+    width: 100% !important;
+}
+.dataTables_filter { display: none; }
+span.redBg{
+    background: #E67681;
+}
+.pointer{
+    cursor: pointer;
+}
+.dataTables_info{
+    margin-left: 15px;
+    font-size: smaller;
+}
+.dataTables_paginate {
+    color: #333;
+    font-size: smaller;
+}
+.dataTables_paginate , .dataTables_info{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}

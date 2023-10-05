@@ -1,0 +1,40 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class BankAddCustomerRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        return [
+            'name'          => 'required',
+            'note'          => 'nullable',
+            'mobile'        => 'required|numeric|starts_with:5|digits:9|unique:customers|unique:customers_phones',
+        ];
+    }
+    public function messages()
+    {
+        return [
+          'name.required'        => 'حقل الإسم إلزامي',
+          'note.required'        => 'حقل الملاحظة إلزامي',
+          'mobile.required'      => 'حقل رقم الجوال إلزامي',
+        ];
+    }
+}

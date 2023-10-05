@@ -1,0 +1,195 @@
+/****************calc********************/
+.spicealBG{
+    background-color: #0f5b94;
+    margin-bottom: 60px;
+  }
+  .spicealBG .loginUserBtn a{
+    color: #fff ;
+    text-decoration: none;
+  }
+  .calcHeader h3 {
+    color: #fff ;
+  }
+  
+  .thirdinput{
+    display: none ;
+  }
+  .detectionInput{
+    display: none ;
+  }
+  
+  .secondToggle{
+   display: none ;
+  }
+  .jointToggle{
+    display: none ;
+   }
+  .form-check-input{
+   width: 20px;
+   height: 20px;
+  }
+  .home h5{
+   font-weight: bold;
+   color: #444;
+  }
+  .home h5 i {
+   color: #0f5b94;
+  }
+  .early{
+   display: none;
+  }
+  
+  .jointearly{
+    display: none;
+   }
+  
+  .valueOn{
+   display: none;
+  }
+  .save{
+   display: none;
+  }
+  .support{
+   display: none;
+  }
+  .Earn{
+   display: none;
+  }
+  .form-check-label{
+   cursor: pointer;
+  }
+  .form-check-input  {
+   cursor: pointer;
+  }
+  .submitBtnCalc .btn{
+   box-shadow: none !important;
+  }
+    
+/****************calc********************/
+
+
+.userFormsResult{
+    display: none;
+  }
+  .result button {
+    padding: 20px 40px;
+    border: 0;
+    background: #0f5b94;
+    color: #fff;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+    outline: 0;
+    transition: 0.3s;
+    box-shadow: 0px 4px 15px #00000021;
+  }
+  
+  
+  
+  .new-content ul.resultOptions li {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 16px;
+    color: #0F5B94;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+    -webkit-transition: ease-in-out 0.3s;
+    -moz-transition: ease-in-out 0.3s;
+    -ms-transition: ease-in-out 0.3s;
+    -o-transition: ease-in-out 0.3s;
+    text-align: center;
+    width: 20%;
+    border: 1px solid #99999912;
+  }
+  ul.resultOptions li:hover {
+    background-color: #0F5B94;
+    color: #fff;
+  }
+  
+  @media(max-width:600px){
+    .new-content ul.resultOptions li{
+      width: 100% ;
+    }
+   }
+   .resultHeader{
+    color: #003d6b;
+    font-weight: bold;
+    font-size: 18px;
+  
+   }
+   .result-body .row.hdie-show:not(:first-of-type) {
+    display: none; 
+  }
+  .singleTypeResult p {
+    color: #003d6b;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0;
+  }
+  .singleTypeResult p span {
+    color: #003d6b;
+    font-weight: bold;
+    font-size: 15px;
+    color: #000;
+  }
+  .singleTypeResult{
+    padding: 12px;
+    background: #e1f2ff;
+    margin-bottom: 12px;
+    border-radius: 2px;
+  }
+  .contREsultRow{
+    background: #0f5b94;
+  
+  }
+  .singleBankName{
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  .toggleBankResult{
+  padding: 12px;
+  background: #fff;
+  margin-bottom: 10px;
+  border-radius: 2px;
+  font-weight: bold;
+  color: #0f5b94;
+  cursor: pointer;
+  }
+  .toggleBankResult p {
+    margin-bottom: 0;
+  }
+  .contREsult{
+    display: none;
+  }
+  
+  
+  /*FOR LOADING DIV*/
+  .userFormsContainer {
+    position: relative;
+  }
+    .loading{
+    position: absolute !important;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: #003b67f7;
+    z-index: 99;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+  }  
+  .loading img{
+    animation: spin 2.5s infinite;
+  } 
+  
+  @keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+  }
+  
